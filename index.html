@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Webservice - Loja de Produtos</title>
+  <style>
+    div.grid, .grid-cols-5, .bg-zinc-800 > div{
+      display: grid;
+      text-align: center;
+      align-items: center;
+      height: 20vh;
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-bottom: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex flex-col w-screen p-10 items-center text-white bg-zinc-900">
+    <div class="flex flex-col w-full items-center">
+      <h1 class="text-3xl font-bold m-10">Webservice - Loja de Produtos</h1>
+      <div class="shadow-2xl rounded-xl">  
+      <div class="grid grid-cols-5 bg-zinc-800 text-2xl h-[20vh] w-full rounded-t-xl">
+        <div>Método</div>
+        <div>URL</div>
+        <div>Descrição</div>
+        <div>Parâmetros</Param></div>
+        <div>Retorno</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/cliente</div>
+        <div>Retorna a lista de todos os clientes cadastrados.</div>
+        <div></div>
+        <div>Retorno: [{ "id": 1, "nome": "Nome do Cliente", "email": " email@email.com " }, {...}]</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/cliente/:id</div>
+        <div>Retorna um cliente em específico.</div>
+        <div>Parâmetros: id (inteiro)</div>
+        <div>Retorno: { "id": 1, "nome": "Nome do Cliente", "email": " email@email.com " }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-amber-400">POST</div>
+        <div>/cliente</div>
+        <div>Insire um novo cliente.</div>
+        <div>Parâmetros: id (inteiro), nome (string), email (string)</div>
+        <div>Retorno: { "message": "Cliente inserido com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-blue-400">PUT</div>
+        <div>/cliente/:id</div>
+        <div>Atualiza um cliente existente.</div>
+        <div>Parâmetros: id (inteiro), nome (string), email (string)</div>
+        <div>Retorno: { "message": "Cliente atualizado com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-red-400">DELETE</div>
+        <div>/cliente/:id</div>
+        <div>Exclui um cliente existente.</div>
+        <div>Parâmetros: id (inteiro)</div>
+        <div>Retorno: { "message": "Cliente excluído com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/produto</div>
+        <div>Retorna a lista de todos os produtos.</div>
+        <div></div>
+        <div>Retorno: [{ "id": 1, "nome": "Nome do Produto", "preco": 99.99 }, {...}]</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/produto/:id</div>
+        <div>Retorna um produto em específico.</div>
+        <div>Parâmetros: id (inteiro)</div>
+        <div>Retorno: { "id": 1, "nome": "Nome do Produto", "preco": 99.99 }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-amber-400">POST</div>
+        <div>/produto</div>
+        <div>Insere um novo produto.</div>
+        <div>Parâmetros: id (inteiro), nome (string), preco (float) </div>
+        <div>Retorno: { "message": "Produto inserido com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-blue-400">PUT</div>
+        <div>/produto/:id</div>
+        <div>Atualiza um produto existente.</div>
+        <div>Parâmetros: id (inteiro), nome (string), preco (float)</div>
+        <div>Retorno: { "message": "Produto atualizado com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-red-400">DELETE</div>
+        <div>/produto/:id</div>
+        <div>Exclui um produto existente.</div>
+        <div>Parâmetros: id (inteiro)</div>
+        <div>Retorno: { "message": "Produto excluído com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/compra</div>
+        <div>Retorna a lista de todas as compras cadastradas.</div>
+        <div></div>
+        <div>Retorno: [{ "id": 1, "data": "2021-05-01", "total": 99,99 }, {...}]</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/compra/:id</div>
+        <div>Retorna uma compra específica.</div>
+        <div>Parâmetros: id (inteiro)</div>
+        <div>Retorno: { "id": 1, "data": "2021-05-01", "total": 99,99 }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-amber-400">POST</div>
+        <div>/compra</div>
+        <div>Insere uma nova compra.</div>
+        <div>Parâmetros: id (inteiro), dados (string), total (float)</div>
+        <div>Retorno: { "message": "Compra inserida com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-blue-400">PUT</div>
+        <div>/compra/:id</div>
+        <div>Atualiza uma compra existente.</div>
+        <div>Parâmetros: id (inteiro), data (string), total (float)</div>
+        <div>Retorno: { "message": "Compra atualizada com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-red-400">DELETE</div>
+        <div>/compra/:id</div>
+        <div>Exclui uma compra existente.</div>
+        <div>Parâmetros: id (inteiro)</div>
+        <div>Retorno: { "message": "Compra arquivo com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/produtocompra</div>
+        <div>Retorna a lista de produtos e compras.</div>
+        <div></div>
+        <div>Retorno: [{ "id_produto": 1, "id_compra": 1, "quantidade": 1 }, {...}]</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-green-400">GET</div>
+        <div>/produtocompra/:id_produto/:id_compra</div>
+        <div>Retorna a quantidade de um produto específico em uma compra específica.</div>
+        <div>Parâmetros: id_produto (inteiro), id_compra (inteiro)</div>
+        <div>Retorno: { "quantidade": 1 }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-amber-400">POST</div>
+        <div>/produtocompra</div>
+        <div>Insere um novo produto na compra.</div>
+        <div>Parâmetros: id_produto (inteiro), id_compra (inteiro), quantidade (inteiro)</div>
+        <div>Retorno: { "message": "Produto adicionado à compra com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800">
+        <div class="text-xl font-bold text-blue-400">PUT</div>
+        <div>/produtocompra/:id_produto/:id_compra</div>
+        <div>Atualiza a quantidade de um produto específico de uma compra específica.</div>
+        <div>Parâmetros: id_produto (inteiro), id_compra (inteiro), quantidade (inteiro)</div>
+        <div>Retorno: { "message": "Quantidade do produto na compra atualizada com sucesso!" }</div>
+      </div>
+      <div class="grid grid-cols-5 bg-zinc-800 rounded-b-xl">
+        <div class="text-xl font-bold text-red-400">DELETE</div>
+        <div>/produtocompra/:id_produto/:id_compra</div>
+        <div>Exclui um produto da compra.</div>
+        <div>Parâmetros: id_produto (inteiro), id_compra (inteiro)</div>
+        <div>Retorno: { "message": "Produto removido da compra com sucesso!" }</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
